@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CadCli</title>
+    <link href="~/css/Estilo.css" rel="stylesheet" />
+    <link href="~/css/Tabela.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/" id="menu_home">Home</a>
+            </li>
+            <li>
+                <a href="/home/about" id="menu_about">Sobre</a>
+            </li>
+            <li>
+                <a href="/clientes" id="menu_cliente">Clientes</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>CadCli - v1.0 - By Fazsoft</footer>
+
+    <script src="~/js/Menu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+> dotnet --info 
+
+> dotnet --h
+
+>dotnet new -h
+>dotnet new -l    
+
+> dotnet new web -n CadCli --no-https 
+> dotnet new web -n CadCli --no-https -f net5.0
+

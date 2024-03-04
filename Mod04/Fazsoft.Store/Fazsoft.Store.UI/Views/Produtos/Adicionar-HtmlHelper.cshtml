@@ -1,0 +1,34 @@
+﻿@model ProdutoAddEditVM
+@{
+    ViewBag.Title = "Adicionar";
+    ViewBag.SubTitle = "Adicionar Novo Produto";
+}
+
+<form method="post">
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Nome, new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.Nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Nome, null, new { @class = "invalid" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Preco, new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.Preco, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Preco, null, new { @class = "invalid" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(x => x.CategoriaId, "Categoria", new { @class = "form-label" })
+        @Html.DropDownListFor(x => x.CategoriaId, Model.Categorias, "Selecione...", new { @class = "form-select" })
+        @Html.ValidationMessageFor(x => x.CategoriaId, null, new { @class = "invalid" })
+    </div>
+
+    <div>
+        <a class="btn btn-outline-warning" href="@Url.Action("Index", "Produtos")">Voltar</a>
+        <button class="btn btn-outline-secondary" type="submit">Salvar</button>
+    </div>
+</form>
+
+@section scripts {
+    <partial name="_ScriptsValidate">
+}

@@ -1,0 +1,11 @@
+﻿@model CadCli.Models.Cliente
+
+<h1>Exclusão</h1>
+
+<p>Deseja excluir o cliente <strong>@Model.Nome</strong>?</p>
+
+<form method="post" action="/Clientes/ConfirmarDel">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <a href="/Clientes">Voltar</a>
+    <button type="submit">Confirmar</button>
+</form>

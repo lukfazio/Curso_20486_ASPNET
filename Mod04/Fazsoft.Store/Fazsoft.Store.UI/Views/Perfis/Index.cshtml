@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PerfilIndexVM>
+@{
+    ViewBag.Title = "Listagem de Perfis";
+    ViewBag.SubTitle = "Listagem de Perfis Cadastados no Sistema!!";
+}
+
+<div>
+    <a asp-controller="Perfis" asp-action="AddEdit" class="btn btn-outline-secondary">Adicionar Perfil</a>
+</div>
+
+<div>
+    <table class="table  table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de Cadastro</th>
+                <th>Usuarios</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr id="item-@item.Id">
+                    <td>@item.Nome</td>
+                    <td>@item.DataCadastro.ToShortDateString()</td>
+                    <td>@item.Usuarios</td>
+                    <td>
+                        <a class="btn btn-outline-success btn-sm" asp-action="AddEdit" asp-controller="Perfis" asp-route-id="@item.Id">Editar</a>
+                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="excluir(@item.Id, '@item.Nome', 'Perfil', '@Url.Action("Excluir","Perfis")')">Excluir</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<partial name="_modalDel">
+
+
+    @section scripts{
+        <script src="~/js/dell-modal.js"></script>
+    }

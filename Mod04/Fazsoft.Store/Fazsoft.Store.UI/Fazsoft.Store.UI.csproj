@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fazsoft.Store.Data\Fazsoft.Store.Data.csproj" />
+    <ProjectReference Include="..\Fazsoft.Store.Domain\Fazsoft.Store.Domain.csproj" />
+    <ProjectReference Include="..\Fazsoft.Store.IoCDI\Fazsoft.Store.IoCDI.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1development_1json__JsonSchema="https://json.schemastore.org/appsettings.json" /></VisualStudio></ProjectExtensions>
+
+</Project>

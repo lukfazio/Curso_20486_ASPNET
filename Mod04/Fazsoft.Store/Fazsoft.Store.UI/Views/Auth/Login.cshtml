@@ -1,0 +1,31 @@
+﻿@model AuthVM
+@{    
+    ViewBag.Title = "Login";
+    ViewBag.SubTitle = "Informe o E-mail e Senha para ter acesso";
+}
+
+<div asp-validation-summary="All" class="invalid">
+
+</div>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-control" autofocus />
+        <span asp-validation-for="Email" class="invalid"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Senha" class="form-label">Senha</label>
+        <input asp-for="Senha" class="form-control" autofocus />
+        <span asp-validation-for="Senha" class="invalid"></span>
+    </div>
+
+    <div>
+        <a class="btn btn-outline-warning" asp-action="Index" asp-controller="Home">Voltar</a>
+        <button class="btn btn-outline-secondary" type="submit">Acessar</button>
+    </div>
+</form>
+
+@section scripts {
+    <partial name="_ScriptsValidate">
+}

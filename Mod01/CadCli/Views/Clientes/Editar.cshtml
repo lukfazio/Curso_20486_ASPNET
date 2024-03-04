@@ -1,0 +1,23 @@
+﻿@model CadCli.Models.Cliente
+
+<h1>Editar Cliente - "@Model.Nome"</h1>
+
+<form method="post" action="/Clientes/Salvar">
+    <div>
+        <label>Id: </label>
+        <input type="text" name="Id" readonly value="@Model.Id">
+    </div>
+    <div>
+        <label>Nome: </label>
+        <input type="text" name="Nome" autofocus required value="@Model.Nome">
+    </div>
+    <div>
+        <label>Idade: </label>
+        <input type="number" name="Idade" required value="@Model.Idade">
+    </div>
+
+    <div>
+        <a href="/Clientes">Voltar</a>
+        <button type="submit">Salvar</button>
+    </div>
+</form>

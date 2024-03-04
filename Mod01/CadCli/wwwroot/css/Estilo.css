@@ -1,0 +1,61 @@
+﻿ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+        li a:hover:not(.active) {
+            background-color: #000;
+        }
+
+.active {
+    background-color: #05aa6e
+}
+
+main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 500px
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Book Antiqua', sans-serif
+}
+
+form div {
+    margin: 20px;
+}
+
+input:invalid {
+    border-left: 3px solid #fc5e5e
+}
+
+input:valid {
+    border-left: 3px solid #93c25d
+}
+
+form label {
+    width: 60px;
+    display: inline-block;
+    text-align: right;
+}
+
+form input {
+    font-size: 18px
+}

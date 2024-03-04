@@ -1,0 +1,38 @@
+﻿@model ProdutoAddEditVM
+@{
+    int id = Convert.ToInt32(ViewContext.RouteData.Values["id"]);
+
+    ViewBag.Title = ( id == 0 ? "Adicionar" : "Editar");
+    ViewBag.SubTitle = (id == 0 ? "Adicionar Novo Produto" : $"Editar Produto {id}");
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label"></label>
+        <input asp-for="Nome" class="form-control" autofocus />
+        <span asp-validation-for="Nome" class="invalid"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Preco" class="form-label">Preço</label>
+        <input asp-for="Preco" class="form-control" />
+        <span asp-validation-for="Preco" class="invalid"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CategoriaId" class="form-label">Categoria</label>
+        <select asp-for="CategoriaId" asp-items="Model.Categorias" class = "form-select" >
+            <option value="">Selecione...</option>
+        </select>
+        <span asp-validation-for="CategoriaId" class="invalid"></span>       
+    </div>
+
+    <div>
+        <a class="btn btn-outline-warning" asp-action="Index" asp-controller="Produtos" >Voltar</a>
+        <button class="btn btn-outline-secondary" type="submit">Salvar</button>
+    </div>
+</form>
+
+@section scripts {
+    <partial name="_ScriptsValidate">
+}

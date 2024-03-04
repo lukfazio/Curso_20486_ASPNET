@@ -1,0 +1,24 @@
+﻿@model CategoriaAddEditVM
+@{
+    int id = Convert.ToInt32(ViewContext.RouteData.Values["id"]);
+
+    ViewBag.Title = ( id == 0 ? "Adicionar" : "Editar");
+    ViewBag.SubTitle = (id == 0 ? "Adicionar Nova Categoria" : $"Editar Categoria {id}");
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label"></label>
+        <input asp-for="Nome" class="form-control" autofocus/>
+        <span asp-validation-for="Nome" class="invalid"></span>
+    </div>
+
+    <div>
+        <a class="btn btn-outline-warning" asp-action="Index" asp-controller="Categorias" >Voltar</a>
+        <button class="btn btn-outline-secondary" type="submit">Salvar</button>
+    </div>
+</form>
+
+@section scripts {
+    <partial name="_ScriptsValidate">
+}
